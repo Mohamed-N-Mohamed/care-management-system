@@ -27,10 +27,10 @@ app.set("view engine", "ejs");
 app.use(morgan("tiny"));
 
 //load assets
-app.use("/js", express.static(path.resolve(__dirname, "assets/js")));
+// app.use("/js", express.static(path.resolve(__dirname, "assets/js")));
 
 app.get("/", (req, res) => {
-  res.send("testing");
+  res.render("index");
 });
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
