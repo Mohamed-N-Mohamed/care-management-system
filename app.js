@@ -11,7 +11,7 @@ const morgan = require("morgan");
 const bodyparser = require("body-parser");
 
 //path
-const path = require('path');
+const path = require("path");
 
 const app = express();
 
@@ -33,19 +33,7 @@ app.set("view engine", "ejs");
 // app.use("/js", express.static(path.resolve(__dirname, "assets/js")));
 app.use("/css", express.static(path.resolve(__dirname, "assets/css")));
 
-app.get("/", (req, res) => {
-  res.render("index");
-});
-
-
-app.get("/add", (req, res) => {
-  res.render("add-client");
-});
-
-app.get("/update", (req, res) => {
-  res.render("update-client");
-});
-
-
+//routers
+app.use("/", require("./server/routes/router"));
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
