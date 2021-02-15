@@ -3,17 +3,30 @@ const express = require("express");
 //route
 const route = express.Router();
 
-route.get("/", (req, res) => {
-  res.render("index");
-});
+//countroller
+const controller = require('../controller/controller')
 
-route.get("/add", (req, res) => {
-  res.render("add-client");
-});
+//services
+const services = require("../services/render");
 
-route.get("/update", (req, res) => {
-  res.render("update-client");
-});
+route.get("/", services.homeRoute);
 
-//export routes
+route.get("/add", services.addClient);
+
+route.get("/update", services.updateClient);
+
+
+//create
+route.post('/api/clients', controller.create)
+
+//find
+route.get('/api/clients', controller.find)
+
+//update
+route.put('/api/clients/:id', controller.update)
+
+//create api route
+route.delete('/api/clients/:id', controller.delete)
+
+//delete
 module.exports = route;
