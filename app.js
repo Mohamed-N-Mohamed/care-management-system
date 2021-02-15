@@ -15,6 +15,9 @@ const path = require("path");
 
 const app = express();
 
+//mongodb connection
+const connectDB = require('./server/database/mongo-connection');
+
 //Port
 const port = process.env.PORT || 3000;
 
@@ -27,7 +30,10 @@ app.use(bodyparser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
 //log requests
-// app.use(morgan("tiny"));
+app.use(morgan("tiny"));
+
+//mongodb connection
+connectDB();
 
 //load assets
 // app.use("/js", express.static(path.resolve(__dirname, "assets/js")));
