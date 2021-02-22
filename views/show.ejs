@@ -1,11 +1,12 @@
+<% for(let i =0; i < clients.length; i++){ %>
 <tr>
-  <td>1</td>
-  <td>Username</td>
-  <td>example@gamil.com</td>
-  <td>Male</td>
-  <td>Active</td>
+  <td><%= i+ 1%></td>
+  <td><%= clients[i].name%></td>
+  <td><%= clients[i].email%></td>
+  <td><%= clients[i].gender%></td>
+  <td><%= clients[i].status%></td>
   <td>
-    <a href="/update" class="btn border-shadow update">
+    <a href="/update?id=<%= clients[i]._id%>" class="btn border-shadow update">
       <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
     </a>
 
@@ -17,3 +18,4 @@
 
 
 </tr>
+<%}%>

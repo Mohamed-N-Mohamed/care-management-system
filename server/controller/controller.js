@@ -20,7 +20,7 @@ exports.create = (req, res) => {
   client
     .save(client)
     .then((data) => {
-      res.send(data);
+     res.redirect('/add')
     })
     //err
     .catch((err) => {
