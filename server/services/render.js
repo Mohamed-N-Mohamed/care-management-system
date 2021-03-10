@@ -25,9 +25,6 @@ exports.updateClient = (req, res) => {
       res.render("update-client", { clients: client.data });
     })
     .catch((err) => {
-      res.send(err)
-
-    })
-
-  res.render("update-client");
+      res.send(err);
+    });
 };
