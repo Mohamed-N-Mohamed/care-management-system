@@ -18,10 +18,10 @@ const app = express();
 //mongodb connection
 const connectDB = require("./server/database/mongo-connection");
 
+dotenv.config({ path: "config.env" });
+
 //Port
 const port = process.env.PORT || 3000;
-
-dotenv.config({ path: "config.env" });
 
 //parse request
 app.use(bodyparser.urlencoded({ extended: true }));
