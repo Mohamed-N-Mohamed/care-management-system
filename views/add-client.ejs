@@ -3,22 +3,20 @@
 
 
 <main id="site-main">
-  <div class="container">
-      <div class="box-nav d-flex justify-between">
-         <div class="filter">
-             <a href="/"><i class="fas fa-angle-double-left"></i> All Users</a>
-         </div>
-      </div>
-      <div class="form-title text-center">
-          <h2 class="text-dark">Add Client</h2>
-          <span class="text-light">Use the below form to add an account</span>
-      </div>
+    <div class="container">
+        <a href="/" class="text-center"><i class="fas fa-angle-double-left mt-2"></i> All Users</a>
+        <div class="sm-title text-center mt-5 p-2">
+            <h3>Add Client</h3>
+            <p class="leaad">Use the below form to add a client</p>
+        </div>
 
-      <!-- add user form -->
-      <%-include('form')%>
+        <div class="message"></div>
 
-     
-  </div>
+        <!-- add user form -->
+        <%-include('form')%>
+
+
+    </div>
 </main>
 
 

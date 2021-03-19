@@ -1,24 +1,35 @@
 //mongodb scheme
-const mongoose =require('mongoose');
+const mongoose = require("mongoose");
 
 const schema = new mongoose.Schema({
   name: {
-    type:String,
-    require: true
+    type: String,
+    required: true
   },
 
-  email: {
+  last: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
 
-  gender: {
+  age: String,
+
+  address: {
     type: String,
-    status: String
-  }
-})
+    required: true
+  },
 
-const clientDB = mongoose.model('clientdb', schema);
+  medication: {
+    type: String,
+    required: true
+  },
 
-module.exports =clientDB
+  carer: {
+    type: String,
+    required: true
+  },
+});
+
+const clientDB = mongoose.model("clientdb", schema);
+
+module.exports = clientDB;

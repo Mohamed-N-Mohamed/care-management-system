@@ -2,15 +2,17 @@
 <tr>
   <td><%= i+ 1%></td>
   <td><%= clients[i].name%></td>
-  <td><%= clients[i].email%></td>
-  <td><%= clients[i].gender%></td>
-  <td><%= clients[i].status%></td>
+  <td><%= clients[i].last%></td>
+  <td><%= clients[i].age%></td>
+  <td><%= clients[i].address%></td>
+  <td><%= clients[i].medication%></td>
+  <td><%= clients[i].carer%></td>
   <td>
-    <a href="/update?id=<%= clients[i]._id%>" class="btn border-shadow update">
+    <a href="/update?id=<%= clients[i]._id%>" class="btn btn-dark btn-sm">
       <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
     </a>
 
-    <a href="" class="btn border-shadow delete" data-id="<%= clients[i]._id%>">
+    <a href="" class="btn btn-danger btn-sm delete" data-id="<%= clients[i]._id%>">
       <span class="text-gradient"><i class="fas fa-times"></i></span>
     </a>
 
@@ -18,4 +20,7 @@
 
 
 </tr>
+
+<div class="message"></div>
+
 <%}%>

@@ -1,6 +1,9 @@
 //use axios to get all client from database
 const axios = require("axios");
 
+//use alert
+const alert = require("alert");
+
 exports.homeRoute = (req, res) => {
   //get client
   axios

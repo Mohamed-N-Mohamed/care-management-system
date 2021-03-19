@@ -16,46 +16,46 @@
 
     <!-- add user form -->
     <!-- form handling -->
+
+    <div class="message"></div>
+
     <form method="POST" id="update_user">
-      <div class="new_user">
-        <div class="form-group">
-          <label for="name" class="text-light">Name</label>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Name" name="name" value="<%=clients.name%>">
           <input type="hidden" name="id" value="<%=clients._id%>">
-          <input type="text" name="name" placeholder="Mark Stoenis" value="<%=clients.name%>">
         </div>
-        <div class="form-group">
-          <label for="Email" class="text-light">Email</label> 
-          <input type="text" name="email" placeholder="example@gmail.com" value="<%=clients.email%>">
+        <div class="form-group col-md-4">
+          <label for="last">Last Name</label>
+          <input type="text" class="form-control" id="last" placeholder="Last Name" name="last"
+            value="<%=clients.last%>">
         </div>
-        <div class="form-group">
-          <label for="gender" class="text-light">Gender</label>
-          <div class="radio inline">
-            <input type="radio" id="radio-2" name="gender"> <%= clients.gender == 'Male' ? 'checked': '' %>
-            <label for="radio-2" class="radio-label">Male</label>
-          </div>
-          <div class="radio inline">
-            <input type="radio" id="radio-3" name="gender" value="Female">  <%= clients.gender == 'Female'?'checked': '' %>
-            <label for="radio-3" class="radio-label">Female</label>
-          </div>
+        <div class="form-group col-md-4">
+          <label for="Age">Age</label>
+          <input type="text" class="form-control" id="age" placeholder="Age" name="age" value="<%=clients.age%>">
         </div>
-
-        <div class="form-group">
-          <label for="gender" class="text-light">Status</label>
-          <div class="radio inline">
-            <input type="radio" id="radio-4" name="status" value="Active">  <%= clients.status == 'Active'?'checked': '' %>
-            <label for="radio-4" class="radio-label">Active</label>
-          </div>
-          <div class="radio inline">
-            <input type="radio" id="radio-5" name="status" value="Inactive">  <%= clients.status == 'Inactive'?'checked': '' %>
-            <label for="radio-5" class="radio-label">Inactive</label>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <button type="submit" class="btn text-dark update">Save</button>
-        </div>
-
       </div>
+      <div class="form-group">
+        <label for="inputAddress">Address</label>
+        <input type="text" class="form-control" id="inputAddress" name="address" value="<%=clients.address%>">
+      </div>
+      <div class="form-group">
+        <label for="medication">Medication</label>
+        <input type="text" class="form-control" id="medication" placeholder="" name="medication"
+          value="<%=clients.medication%>">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="carer">Carer Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Carer Name" name="carer"
+            value="<%=clients.carer%>">
+        </div>
+      </div>
+
+
+      <button type="submit" class="btn btn-dark btn-block text-light">Submit</button>
     </form>
 
 

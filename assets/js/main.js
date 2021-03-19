@@ -1,9 +1,28 @@
 const updateUser = document.querySelector("#update_user");
 const btn = document.querySelector(".update");
 const form = document.querySelector(".new_user");
+const message = document.querySelector(".message");
 
-function alertMessage() {
-  alert("stored in the database");
+function alertMessage(className, msg) {
+  //create msg
+  const div = document.createElement("div");
+  div.className = className;
+  div.append(document.createTextNode(msg));
+  message.appendChild(div);
+
+  //clear alert after 3 seconds
+  setTimeout(() => {
+    this.clearAlert();
+  }, 3000);
+}
+
+function clearAlert() {
+  const currentAlert = document.querySelector(".alert");
+
+  //check if there is alert and then remove
+  if (currentAlert) {
+    currentAlert.remove();
+  }
 }
 
 //update user
@@ -20,7 +39,7 @@ function update(e) {
   };
 
   $.ajax(req).done((response) => {
-    alert("data added");
+    alertMessage("alert alert-success", "Data has been updated");
   });
 
   //can't use fetch for some reason / used a simple jquery code from stack overflow
@@ -56,7 +75,7 @@ if (window.location.pathname == "/") {
   $ondelete.click(function () {
     let id = $(this).attr("data-id");
 
-    //make sure to test in postman 
+    //make sure to test in postman
     let request = {
       url: `http://localhost:3000/api/clients/${id}`,
       method: "DELETE",
@@ -73,3 +92,6 @@ if (window.location.pathname == "/") {
 }
 
 updateUser.addEventListener("submit", update);
+
+
+console.log(updateUser)
